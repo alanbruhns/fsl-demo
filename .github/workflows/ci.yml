@@ -1,0 +1,25 @@
+name: CI App Pipeline
+
+on: [pull_requests]
+
+jobs:
+  build:
+    runs-on: unbuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run linter
+      run: npm run lint
+
+    - name: Run formatter
+      run: npm run prettier
+
+    - name: Run Test
+      run: CI=true npm run test
+    
+    - name: Build
+      run: npm run build
