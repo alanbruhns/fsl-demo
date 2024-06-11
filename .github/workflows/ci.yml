@@ -1,6 +1,6 @@
 name: CI App Pipeline
 
-on: [pull_requests]
+on: [pull_request]
 
 jobs:
   build:
